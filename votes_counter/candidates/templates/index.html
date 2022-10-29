@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for candidate in candidates %}
+        <p>
+            Кандидат: {{ candidate.name }}
+        </p> 
+        <p>
+            Голосов: {{ candidate.votes }}
+        </p>
+        <p>
+            <a href={% url 'candidates:vote' candidate.id %}>
+                Проголосовать
+            </a>
+        </p>
+    {% endfor %}
+{% endblock content %}
